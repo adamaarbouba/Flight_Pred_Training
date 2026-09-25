@@ -6,7 +6,7 @@ from sklearn.preprocessing import MinMaxScaler
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_PATH = BASE_DIR / "core" / "flights.csv"
-MODEL_PATH = BASE_DIR / "models" / "LR_model.joblib"
+MODEL_PATH = BASE_DIR / "models" / "FR_model.joblib"
 
 STOP_MAP = {"zero": 0, "one": 1, "two_or_more": 2}
 CLASS_MAP = {"Economy": 0, "Business": 1}
@@ -42,8 +42,8 @@ feature_columns = (
     ).columns.tolist()
 )
 
-st.set_page_config(page_title="Flight Price Predictor", page_icon="✈️")
-st.title("✈️ Flight Price Predictor")
+st.set_page_config(page_title="Flight Price Predictor", page_icon="")
+st.title("Flight Price Predictor")
 
 with st.form("prediction_form"):
     airline = st.selectbox("Airline", sorted(df["airline"].dropna().unique()))
